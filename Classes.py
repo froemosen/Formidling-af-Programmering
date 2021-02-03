@@ -5,22 +5,22 @@ y = 1080
 pg.mixer.init()
 win = pg.display.set_mode((x,y), pg.FULLSCREEN)
 
-startButton = pg.image.load("assets/menu/startButton.png")
-startButton1 = pg.image.load("assets/menu/startButton1.png")
-quitButton = pg.image.load("assets/menu/quitButton.png")
-quitButton1 = pg.image.load("assets/menu/quitButton1.png")
+startButton = pg.image.load("Assets\mainMenu\startButton.png")
+startButton1 = pg.image.load("Assets\mainMenu\startButton1.png")
+quitButton = pg.image.load("Assets\mainMenu\quitButton.png")
+quitButton1 = pg.image.load("Assets\mainMenu\quitButton1.png")
 
 #Main Menu buttons
 class buttons(object):
-    def __init__(self, startX, startY, settingX, settingY, quitX, quitY, height, width):
+    def __init__(self, startX, startY, startheight, startwidth, quitX, quitY, quitheight, quitwidth):
         self.startX = startX
         self.startY = startY
-        self.settingX = settingX
-        self.settingY = settingY
         self.quitX = quitX
         self.quitY = quitY
-        self.height = height
-        self.width = width
+        self.startheight = startheight
+        self.startwidth = startwidth
+        self.quitheight = quitheight
+        self.quitwidth = quitwidth
     
     def drawStart(self):
         win.blit(startButton, (self.startX, self.startY))
