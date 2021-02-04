@@ -8,7 +8,7 @@ y = 1080
 pg.mixer.init(frequency=44100, size=-16, channels=6, buffer=4096)
 clock = pg.time.Clock()
 tick = pg.time.get_ticks()
-bg = pg.image.load("Assets\mainMenu\Baggrund.png") #Load Bg
+bg = pg.image.load("Assets\mainMenu\Baggrund1.png") #Load Bg
 win = pg.display.set_mode((x,y), pg.FULLSCREEN)
 pg.display.set_caption("Life of Mark episode 2 - Master The Snake")
 icon = pg.image.load("Assets\others\icon.png")
