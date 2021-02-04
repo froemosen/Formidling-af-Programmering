@@ -14,7 +14,7 @@ pg.display.set_caption("Life of Mark episode 2 - Master The Snake")
 icon = pg.image.load("Assets\others\icon.png")
 pg.display.set_icon(icon)
 select = pg.mixer.Sound("Assets\Sounds\selectMenu.wav")
-btnStartX, btnStartY, btnStartHeight, btnStartWidth, btnQuitX, btnQuitY, btnQuitHeight, btnQuitWidth = 841, 600, 60, 238, 872, 840, 58, 176
+btnStartX, btnStartY, btnStartHeight, btnStartWidth, btnQuitX, btnQuitY, btnQuitHeight, btnQuitWidth = 841, 500, 60, 238, 872, 600, 58, 176
 buttons = Classes.buttons(btnStartX, btnStartY, btnStartHeight, btnStartWidth, btnQuitX, btnQuitY, btnQuitHeight, btnQuitWidth)
 startButton1 = Classes.startButton1
 quitButton1 = Classes.quitButton1
