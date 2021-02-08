@@ -85,7 +85,7 @@ def pygameMenuStart():
                 run = False
             if event.type == pg.MOUSEBUTTONDOWN:
                 if mx > btnStartX and mx < btnStartX+btnStartWidth and my > btnStartY and my < btnStartY+btnStartHeight:
-                    pg.mixer.music.fadeout(1500)
+                    pg.mixer.music.fadeout(150)
                     Game.start()
                 if mx > btnQuitX and mx < btnQuitX+btnQuitWidth and my > btnQuitY and my < btnQuitY+btnQuitHeight:
                     run = False
