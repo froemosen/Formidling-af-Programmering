@@ -52,14 +52,14 @@ def drawWorld():
         buttons.drawStart()
         buttons.drawQuit()
 
-        win.blit(logo0, (755, 70))
-        win.blit(logo1, (712, 300))
+        win.blit(logo0, (765, 180))
+        win.blit(logo1, (758, 390))
 
         if mx > btnStartX and mx < btnStartX+btnStartWidth and my > btnStartY and my < btnStartY+btnStartHeight:
             if not soundCool:
                 pg.mixer.Channel(1).play(select)
                 soundCool = True
-            win.blit(icon, (btnStartX+109, btnStartY+260))
+            win.blit(icon, (btnStartX+109, btnStartY+210))
             win.blit(startButton1, (btnStartX, btnStartY))
             
                 
