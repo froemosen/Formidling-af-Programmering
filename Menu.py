@@ -20,10 +20,12 @@ icon = pg.image.load("Assets\others\icon.png")
 pg.display.set_icon(icon)
 select = pg.mixer.Sound("Assets\Sounds\selectMenu.wav")
 soundCool = False
-btnStartX, btnStartY, btnStartHeight, btnStartWidth, btnQuitX, btnQuitY, btnQuitHeight, btnQuitWidth = 841, 500, 60, 238, 872, 600, 58, 176
+btnStartX, btnStartY, btnStartHeight, btnStartWidth, btnQuitX, btnQuitY, btnQuitHeight, btnQuitWidth = 841, 550, 60, 238, 872, 640, 58, 176
 buttons = Classes.buttons(btnStartX, btnStartY, btnStartHeight, btnStartWidth, btnQuitX, btnQuitY, btnQuitHeight, btnQuitWidth)
 startButton1 = Classes.startButton1
 quitButton1 = Classes.quitButton1
+logo0 = pg.image.load("Assets\mainMenu\LOMtext0.png")
+logo1 = pg.image.load("Assets\mainMenu\LOMtext1.png")
 
 def drawWorld():
         mx, my = pg.mouse.get_pos()
@@ -49,6 +51,9 @@ def drawWorld():
 
         buttons.drawStart()
         buttons.drawQuit()
+
+        win.blit(logo0, (755, 70))
+        win.blit(logo1, (712, 300))
 
         if mx > btnStartX and mx < btnStartX+btnStartWidth and my > btnStartY and my < btnStartY+btnStartHeight:
             if not soundCool:
