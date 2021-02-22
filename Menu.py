@@ -1,18 +1,22 @@
 import pygame as pg
-import time
-import random as r
 import Classes
 import Game
+#res and fpssetup
 x = 1920
 y = 1080
-pg.mixer.init(frequency=44100, size=-16, channels=6, buffer=4096)
 clock = pg.time.Clock()
 tick = pg.time.get_ticks()
+fps = 60
+
+#
+pg.mixer.init(frequency=44100, size=-16, channels=6, buffer=4096)
+
+
+#baggrund
 bg1 = pg.image.load("Assets\mainMenu\Baggrund1.png") #Load Bg
 bg2 = pg.image.load("Assets\mainMenu\Baggrund2.png") #Load Bg
 bg3 = pg.image.load("Assets\mainMenu\Baggrund3.png") #Load Bg
-bg4 = pg.image.load("Assets\mainMenu\Baggrund4.png") #Load Bg
-bgAnimation = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 3, 3, 2, 3, 3, 2, 4, 3, 4, 4, 4, 3, 3, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 2, 1, 2, 1, 2,]
+bgAnimation = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 3, 3, 2, 3, 3, 2, 2, 3, 2, 2, 2, 3, 3, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 2, 1, 2, 1, 2,]
 bgChoice = 0
 win = pg.display.set_mode((x,y), pg.FULLSCREEN)
 pg.display.set_caption("Life of Mark episode 2 - Master The Snake")
@@ -41,16 +45,14 @@ def drawWorld():
             bg = bg2
         elif bgAnimation[bgChoice] == 3:
             bg = bg3
-        elif bgAnimation[bgChoice] == 4:
-            bg = bg4
         else: 
             bg = bg1
 
         win.blit(bg, (0,0))
         bgChoice += 1
 
-        buttons.drawStart()
-        buttons.drawQuit()
+        buttons.drawStart(win)
+        buttons.drawQuit(win)
 
         win.blit(logo0, (765, 180))
         win.blit(logo1, (758, 390))
@@ -71,8 +73,8 @@ def drawWorld():
             
         
         else:
-            buttons.drawStart()
-            buttons.drawQuit()
+            buttons.drawStart(win)
+            buttons.drawQuit(win)
             soundCool = False
 
 def pygameMenuStart():
@@ -83,7 +85,7 @@ def pygameMenuStart():
     run = True
     while run:
         mx, my = pg.mouse.get_pos()
-        clock.tick(60)
+        clock.tick(fps)
 
         for event in pg.event.get():
             if event.type == pg.QUIT:

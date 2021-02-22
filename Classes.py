@@ -3,7 +3,8 @@ import random as r
 x = 1920
 y = 1080
 pg.mixer.init()
-win = pg.display.set_mode((x,y), pg.FULLSCREEN)
+
+
 
 startButton = pg.image.load("Assets\mainMenu\startButton.png")
 startButton1 = pg.image.load("Assets\mainMenu\startButton1.png")
@@ -22,16 +23,29 @@ class buttons(object):
         self.quitheight = quitheight
         self.quitwidth = quitwidth
     
-    def drawStart(self):
+    def drawStart(self, win):
         win.blit(startButton, (self.startX, self.startY))
     
-    def drawQuit(self):
+    def drawQuit(self, win):
         win.blit(quitButton, (self.quitX, self.quitY))
 
 
-#Game Classes
-class snake():
+class GameObject():
+    def __init__(self, x, y):
+        pass
+    
+    def draw(self, win):
+        pass
 
-class obstacle():
+class Snake(GameObject):
+    def __init__(self):
+        pass
 
-class point():
+class Food(GameObject):
+    def __init__(self):
+        pass
+
+class Obstacle(GameObject):
+    def __init__(self):
+        pass
+    
