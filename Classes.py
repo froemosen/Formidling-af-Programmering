@@ -29,3 +29,9 @@ class buttons(object):
         win.blit(quitButton, (self.quitX, self.quitY))
 
 
+#Game Classes
+class snake():
+
+class obstacle():
+
+class point():
