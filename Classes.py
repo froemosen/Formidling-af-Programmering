@@ -31,21 +31,34 @@ class buttons(object):
 
 
 class GameObject():
-    def __init__(self, x, y):
-        pass
-    
+    def __init__(self, sprite, x, y):
+        self.sprite = sprite
+        self.x = x
+        self.y = y
+
     def draw(self, win):
-        pass
+        win.blit(sprite, (x, y))
 
 class Snake(GameObject):
-    def __init__(self):
+    def __init__(self, x, y):
+        self.length = 1
+        self.snakeID = ((x, y, "R", "H"), (x-1, y, "R", "B"), (x-2, y, "R", "B")) #Id's go into master list, with snake bits inside ((x, y, orientation("U","R","D","L"), part("H", "B", "T")))
+        """ Lav noget med snake-movement hvor en liste indeholder en masse instrukser: (L, U, D, L, U, R, U, L, L, L)"""
+
+    def animate(self):
         pass
 
 class Food(GameObject):
     def __init__(self):
         pass
 
+    def animate(self):
+        pass
+
 class Obstacle(GameObject):
     def __init__(self):
+        pass
+
+    def animate(self):
         pass
     
