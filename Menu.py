@@ -16,7 +16,7 @@ pg.mixer.init(frequency=44100, size=-16, channels=6, buffer=4096)
 bg1 = pg.image.load("Assets\mainMenu\Baggrund1.png") #Load Bg
 bg2 = pg.image.load("Assets\mainMenu\Baggrund2.png") #Load Bg
 bg3 = pg.image.load("Assets\mainMenu\Baggrund3.png") #Load Bg
-bgAnimation = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 3, 3, 2, 3, 3, 2, 2, 3, 2, 2, 2, 3, 3, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 2, 1, 2, 1, 2,]
+bgAnimation = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 3, 3, 2, 3, 3, 2, 2, 3, 2, 2, 2, 3, 3, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 2, 1, 2, 1, 2]
 bgChoice = 0
 win = pg.display.set_mode((x,y), pg.FULLSCREEN)
 pg.display.set_caption("Life of Mark episode 2 - Master The Snake")
@@ -28,8 +28,7 @@ btnStartX, btnStartY, btnStartHeight, btnStartWidth, btnQuitX, btnQuitY, btnQuit
 buttons = Classes.buttons(btnStartX, btnStartY, btnStartHeight, btnStartWidth, btnQuitX, btnQuitY, btnQuitHeight, btnQuitWidth)
 startButton1 = Classes.startButton1
 quitButton1 = Classes.quitButton1
-logo0 = pg.image.load("Assets\mainMenu\LOMtext0.png")
-logo1 = pg.image.load("Assets\mainMenu\LOMtext1.png")
+logo = pg.image.load("Assets\mainMenu\gulbg.png")
 
 def drawWorld():
         mx, my = pg.mouse.get_pos()
@@ -54,8 +53,7 @@ def drawWorld():
         buttons.drawStart(win)
         buttons.drawQuit(win)
 
-        win.blit(logo0, (765, 180))
-        win.blit(logo1, (758, 390))
+        win.blit(logo, (588, 100))
 
         if mx > btnStartX and mx < btnStartX+btnStartWidth and my > btnStartY and my < btnStartY+btnStartHeight:
             if not soundCool:
