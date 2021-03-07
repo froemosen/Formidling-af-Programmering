@@ -98,33 +98,45 @@ def levelDecode(levelID):
         #Item
         if levelID[0] == "F":
             lvlAssets.append(food) #Item append
+            xoffset = 20+6
+            yoffset = 20+17
         elif levelID[0] == "L":
             lvlAssets.append(lake)
+            xoffset = 20
+            yoffset = 20+31
         elif levelID[0] == "P":
             lvlAssets.append(plants)
+            xoffset = 20
+            yoffset = 20+25
         elif levelID[0] == "R":
             lvlAssets.append(rock)
+            xoffset = 20
+            yoffset = 20+12
         #elif levelID[0] == "Z": #Usynlig collision (Når forhindringer er indbygget i banen.)
             #lvlAssets.append()
 
         #Position
-        xy = []
-        for i in range(2):
-            if levelID[i+1] == "0":
-                pos = 10
-                xy.append(pos*100)
-            else:
-                try: #Level valgt er nummereret fra 0 til 9
-                    pos = int(levelID[i+1])
-                    xy.append(pos*100)
-                except ValueError: #Levelnummerering valgt er højere eller lig 10
-                    pos = ord(levelID[i+1])-86 #"ord" returnerer en nummerering for bogstavet. Når man subtakterer 96 vil a=1, b=2, c=3, osv. 
-                    xy.append(pos*100)
+        if levelID[0] == "F" or "L" or "P" or "R":
+            xy = []
+            for i in range(2):
+                if i == 0: offset = xoffset
+                elif i == 1: offset = yoffset
 
-        lvlAssets.append(xy)
-        print(lvlAssets)
-        del(levelID[2], levelID[1], levelID[0])
-        print("len:", len(levelID))
+                if levelID[i+1] == "0": #Position er 10
+                    pos = 10
+                    xy.append(pos*100+offset)
+                else:
+                    try: #Level valgt er nummereret fra 0 til 9
+                        pos = int(levelID[i+1])
+                        xy.append(pos*100+offset)
+                    except ValueError: #Levelnummerering valgt er højere eller lig 10
+                        pos = ord(levelID[i+1])-86 #"ord" returnerer en nummerering for bogstavet. Når man subtakterer 96 vil a=1, b=2, c=3, osv. 
+                        xy.append(pos*100+offset)
+
+            lvlAssets.append(xy)
+            print(lvlAssets)
+            del(levelID[2], levelID[1], levelID[0])
+            print("len:", len(levelID))
 
 if __name__ == '__main__':
     start("BcF11F56Fa4R22L95P74")
