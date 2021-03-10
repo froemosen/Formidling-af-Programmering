@@ -47,18 +47,3 @@ class Snake(GameObject):
 
     def animate(self):
         pass
-
-class Food(GameObject):
-    def __init__(self):
-        pass
-
-    def animate(self):
-        pass
-
-class Obstacle(GameObject):
-    def __init__(self):
-        pass
-
-    def animate(self):
-        pass
-    

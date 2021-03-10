@@ -29,9 +29,10 @@ buttons = Classes.buttons(btnStartX, btnStartY, btnStartHeight, btnStartWidth, b
 startButton1 = Classes.startButton1
 quitButton1 = Classes.quitButton1
 logo = pg.image.load("Assets\mainMenu\gulbg.png")
+reklame = pg.image.load("Assets\Raspberry-pi\RaspberryReklame.png")
 
 def drawWorld():
-        mx, my = pg.mouse.get_pos()
+        mx, my = pg.mouse.get_pos() 
         global bgChoice
         global soundCool
 
@@ -53,6 +54,7 @@ def drawWorld():
         buttons.drawStart(win)
         buttons.drawQuit(win)
 
+        win.blit(reklame, (1400, 1000))
         win.blit(logo, (588, 100))
 
         if mx > btnStartX and mx < btnStartX+btnStartWidth and my > btnStartY and my < btnStartY+btnStartHeight:
@@ -91,7 +93,7 @@ def pygameMenuStart():
             if event.type == pg.MOUSEBUTTONDOWN:
                 if mx > btnStartX and mx < btnStartX+btnStartWidth and my > btnStartY and my < btnStartY+btnStartHeight:
                     pg.mixer.music.fadeout(150)
-                    Game.start("BcF11F56Fa4R22L95P74")
+                    Game.start("BcF11F56Fa4R22L95P74", ["HeadR", [5,4], "BodyVand", [4,4], "BodyVand", [3,4], "BodyVand", [2,4],  "TailR", [1,4]])
                 if mx > btnQuitX and mx < btnQuitX+btnQuitWidth and my > btnQuitY and my < btnQuitY+btnQuitHeight:
                     run = False
                     pg.quit()
