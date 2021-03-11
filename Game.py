@@ -316,4 +316,4 @@ def snakeMovement(snakeID, snakePath):
 
 
 if __name__ == '__main__':
-    start("BcF11F56Fa4R22L95P74", ["HeadR", [5,4], "BodyVand", [4,4], "BodyVand", [3,4], "BodyVand", [2,4],  "TailR", [1,4]])
+    start("ScF11F56Fa4R22L95P74", ["HeadR", [5,4], "BodyVand", [4,4], "BodyVand", [3,4], "BodyVand", [2,4],  "TailR", [1,4]])
