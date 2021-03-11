@@ -102,9 +102,6 @@ def run(snakeID):
         drawWorld() #Draws world
         pg.display.update() #Updates display. 
 
-        
-
-
 
 
 def drawWorld():
